@@ -1,0 +1,73 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Tabella</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+table.tabella{
+	border: 2px solid #CCCCCC;
+}
+table.tabella th{
+	background-color : blue;
+	font-size : 16px;
+	color : white;
+	padding : 2px;
+}
+table.tabella td{
+	background-color : cyan;
+	color : back;
+	padding : 2px;
+}
+</style>
+<script type='text/javascript'>
+
+function aggiungiriga('table'){
+
+     var table = document.getElementById('table);
+
+     var tbody = table.getElementsByTagname('tbody')[0];
+
+     var colonne = table.getElementsByTagname('th').length; 
+
+     var tr = document.createElement('tr')
+     for(var i=0; i<colonne; i++){
+
+          var td = document.createElement('td');
+
+          var tx = document.createTextNode(prompt("Inserisci testo per cella "+(i+1),""));
+
+          td.appendChild(tx);
+
+          tr.appendChild(td);
+
+     }
+
+     tbody.appendChild(tr);
+
+}
+</head>
+<body>
+<script type="text/javascript" src="\home\informatica\Desktop\Tabella\Tabella.js"></script>
+<center>
+<table border="2" id="table">
+<thead>
+<tr>
+<th>Nome</th>
+<th>Cognome</th>
+<th>Data di nascita</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><input type="testo" placeholder="nome" name="nome"></td>
+<td><input type="testo" placeholder="cognome" name="cognome"></td>
+<td><input type="testo" placeholder="data di nascita" name="data di nascita"></td>
+</tr>
+</tbody>
+</table>
+<br>
+<input type="button" value="Aggiungi riga" style=" color:#191919; background-color: #00CC00;" onclick="aggiungiriga("table")>
+</br>
+</center>
+</body>
+</html>
